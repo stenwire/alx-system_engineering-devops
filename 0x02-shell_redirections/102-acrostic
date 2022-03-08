@@ -1,2 +1,2 @@
 #!/bin/bash
-awk '{print $1}' Acrostic
+cut -c 1 | paste -s -d ''
