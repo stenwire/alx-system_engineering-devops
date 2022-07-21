@@ -1,9 +1,8 @@
 #!/bin/bash
+# displays Best School 10 times
 
-limit=11
-i=1
-
-until [ "$i" -eq "$limit" ]; do
-    echo "Best School"
-    ((i++))
+count=0
+until [ "$count" -eq 10 ]; do
+	echo "Best School"
+	let count=count+1
 done
