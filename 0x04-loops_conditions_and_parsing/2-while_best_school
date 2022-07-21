@@ -2,8 +2,7 @@
 
 limit=11
 i=1
-
-while (("$i" < "$limit"));
+while [ "$i" -le "$limit" ];
 do
     echo "Best School"
     ((i++))
