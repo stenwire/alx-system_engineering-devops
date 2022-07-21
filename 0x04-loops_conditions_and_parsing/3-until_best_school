@@ -1,0 +1,9 @@
+#!/bin/bash
+
+limit=11
+i=1
+
+until [ "$i" -eq "$limit" ]; do
+    echo "Best School"
+    ((i++))
+done
