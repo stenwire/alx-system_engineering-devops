@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # displays Best School 10 times but for the 9th iteration, displays Best School and then Hi on a new line
 
 count=0
