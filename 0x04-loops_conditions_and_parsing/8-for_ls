@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# displays the content of the current directory:
-#+ In a list format
-#+ Where only the part of the name after the first dash is displayed
+# A scripts that displays directory content in list format
 
-for i in *;
+files=$(ls)
+
+for file in $files
 do
-    echo "$i" | cut -d'-' -f2
+    echo "$file" | cut -d "-" -f 2
 done
