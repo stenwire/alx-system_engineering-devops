@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# A script that sends a signal to kill running process
+
+FILE="/var/run/my_process.pid"
+start()
+{
+    ./manage_my_process &
+    sudo touch $FILE
+    pid="$!"
+    echo $pid > $FILE
+}
+
+stop()
+{
+    kill -15 "$(cat $FILE)"
+    rm $FILE
+}
+
+restart()
+{
+    stop
+    start
+}
+
+if [ $# = 0 ]
+then
+    echo "Usage: manage_my_process {start|stop|restart}"
+    exit
+fi
+
+case "$1" in 
+    "start")
+    start
+    echo "manage_my_process started"
+    ;;
+
+    "stop")
+    stop
+    echo "manage_my_process stopped"
+    ;;
+
+    "restart")
+    restart
+    echo "manage_my_process restarted"
+    ;;
+
+    *)
+    echo "Usage: manage_my_process {start|stop|restart}"
+    ;;
+
+esac

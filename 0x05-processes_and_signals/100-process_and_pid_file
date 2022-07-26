@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# A script that sends a signal to kill running process
+file_name="/var/run/myscript.pid"
+
+handler_sigterm()
+{
+    echo "I hate the kill command"
+    rm $file_name
+    exit 0
+}
+
+handler_sigint()
+{
+    echo "Y U no love me?!"
+    exit 0
+}
+
+handler_sigquit()
+{
+    rm $file_name
+    exit 0
+}
+
+
+sudo touch file_name
+echo "$$" > $file_name
+trap handler_sigterm SIGTERM
+trap handler_sigint SIGINT
+trap handler_sigquit SIGQUIT
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
