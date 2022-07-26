@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Accessing neat formatted printing of /etc/passwd file
+
+while IFS=":" read -r "USERNAME" "PASSWORD" "USER_ID" "GROUP_ID" "USER_INFO" "HOME_DIRECTORY" "SHELL"
+do
+    echo "The user $USERNAME is part of the $GROUP_ID gang, lives in $HOME_DIRECTORY and rides $SHELL. ${USER_ID}'s place is protected by the passcode $PASSWORD, more info about the user here: ${USER_INFO}"
+done < /etc/passwd
