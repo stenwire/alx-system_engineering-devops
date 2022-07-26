@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
-# loops from 1 to 10 and displays
-#+ "bad luck" for the 4th loop iteration
-#+ "good luck" for the 8th loop iteration
-#+ "Best School" for the other iterations
+# More on control flow
 
-COUNTER=1
-while [ "$COUNTER" -le 10 ]; do
-    if [ $COUNTER -eq 4 ]; then
-	echo "bad luck"
-    elif [ $COUNTER -eq 8 ]; then
-	echo "good luck"
+counter=1
+
+while [ $counter -le 10 ]
+do
+    if [ $counter -eq 4 ]
+    then
+        echo "bad luck"
+        
+
+    elif [ $counter -eq 8 ]
+    then
+        echo "good luck"
+
     else
-	echo "Best School"
+        echo "Best School"
     fi
-    let COUNTER=COUNTER+1
+    (( counter++ ))
 done
