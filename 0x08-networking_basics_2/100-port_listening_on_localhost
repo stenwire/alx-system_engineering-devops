@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A port that listens for communication
+
+nc -l 98

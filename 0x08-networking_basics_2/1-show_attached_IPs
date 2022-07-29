@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A script to print out the ip address
+
+ifconfig | grep -oP 'inet addr:\k[0-9.]*'
