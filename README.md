@@ -12,4 +12,4 @@
 bla bla bla bla bla
 
 ## Repositories
-it's 5AM, I just want to sleep, writing README's is like writing test cases.....(nahhh i'm joking, i enjoy this!)
+it's 5AM, I just want to sleep!
