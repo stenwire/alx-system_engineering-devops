@@ -3,48 +3,6 @@
 
 <br>
 
-<div class="faqs" style="font-family: consolas;">
-
-# FAQs:
-
-**What is a server?**
-
-A server is a software or hardware that aids the operation of devices connected to a network.
-
-**Role of DNS:**
-
-DNS is used to allocate domain name to there respective IP address.
-
-**What type of DNS record www is in www.foobar.com?**
-
-The DNS record wwww is of the CNAME record.
-
-**What is the role of the web server?**
-
-The role of the web server is used serve static web contents on http request.
-
-**What is the role of the application server?**
-
-The role of the application server is used serve dynamic web contents on http request.
-
-**What is the role of the database?**
-
-The database is used to store and maintain dynamic web contents.
-
-**What is the server using to communicate with the computer of the user requesting the website?**
-
-The server is communicating with the computer of the user via HTTP request and the response, statically or dynamically.
-
-**SPOF?**
-
-SPOF translate to Single Point of Failure
-
-
-</div>
-
-
-<br>
-
 <div class="main" style="font-family: consolas; img-height:500px; img-width:700px">
 
 # Infrastructure 101 -- Getting started:
@@ -158,6 +116,47 @@ This is a Scaled up infrastructure(i.e contains more than one server secured ove
 
 
 <div class="others" style="font-family: consolas;">
+
+
+<div class="faqs" style="font-family: consolas;">
+
+# FAQs:
+
+**What is a server?**
+
+A server is a software or hardware that aids the operation of devices connected to a network.
+
+**Role of DNS:**
+
+DNS is used to allocate domain name to there respective IP address.
+
+**What type of DNS record www is in www.foobar.com?**
+
+The DNS record wwww is of the CNAME record.
+
+**What is the role of the web server?**
+
+The role of the web server is used serve static web contents on http request.
+
+**What is the role of the application server?**
+
+The role of the application server is used serve dynamic web contents on http request.
+
+**What is the role of the database?**
+
+The database is used to store and maintain dynamic web contents.
+
+**What is the server using to communicate with the computer of the user requesting the website?**
+
+The server is communicating with the computer of the user via HTTP request and the response, statically or dynamically.
+
+**SPOF?**
+
+SPOF translate to Single Point of Failure
+
+
+</div>
+
 
 # Author
 
