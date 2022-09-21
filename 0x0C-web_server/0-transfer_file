@@ -1,4 +1,4 @@
-#!usr/bin/env bash
+#!/usr/bin/env bash
 # A Bash script that transfers a file from our client to a server
 
 PATH_TO_FILE=$1
