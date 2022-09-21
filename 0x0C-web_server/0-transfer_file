@@ -12,4 +12,4 @@ then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 fi
 
-scp -o StrictHostKeyChecking=no -i $PATH_TO_SSH_KEY $PATH_TO_FILE $USERNAME@$IP:~/
+scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP":~/
