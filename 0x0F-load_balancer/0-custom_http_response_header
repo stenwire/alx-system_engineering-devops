@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# We want to add a custom Nginx response header.
+# shellcheck disable=SC2154
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo apt-get install nginx-extras
+sudo sed -i "11i\\\more_set_headers X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+sudo service nginx restart
