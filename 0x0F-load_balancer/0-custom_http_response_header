@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
-# We want to add a custom Nginx response header.
-# shellcheck disable=SC2154
+# add Custom Header 'X-Served-By' with hostname as value
 
-sudo apt-get -y update
-sudo apt-get -y upgrade
+# install nginx
 sudo apt-get -y install nginx
-sudo apt-get install nginx-extras
-sudo sed -i "11i\\\more_set_headers X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+# update contents of index file
+sudo bash -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
+
+# redirects /redirect_me to another page
+redirect="\n\tlocation /redirect_me {\n\t\treturn 301 https://github.com/stenwire/alx-system_engineering-devops/edit/main/0x0F-load_balancer/0-custom_http_response_header;\n\t}\n"
+sudo sed -i "53s|.*|$redirect|" /etc/nginx/sites-enabled/default
+
+# add custom header
+sudo sed -i '52 a \\t\tadd_header X-Served-By $hostname;' /etc/nginx/sites-enabled/default
+
+# restart nginx
 sudo service nginx restart
