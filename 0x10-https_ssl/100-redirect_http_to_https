@@ -34,12 +34,26 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 frontend myfrontend
-        bind :80
-        mode http
+        bind *:80
+        # bind *:443 ssl crt /etc/letsencrypt/live/www.stephennwankwo.tech/fullchain.pem
+        # http-request add-header X-Forwarded-Proto:\ http
+        default_backend myservers
+
+frontend www-https
+        bind *:443 ssl crt /etc/haproxy/ssl-certs/cert.pem
+        # http-request add-header X-Forwarded-Proto:\ https
+
+        # Let the letsencrypt backend handle requests to the
+        # acme-challenge url
+        acl letsencrypt-req path_beg /.well-known/acme-challenge/
+        use_backend letsencrypt if letsencrypt-req
         default_backend myservers
 
 backend myservers
-        mode http
+        redirect scheme https if !{ ssl_fc }
         balance roundrobin
         server 7630-web-01 34.239.151.92:80 check
         server 7630-web-02 34.204.166.190:80 check
+
+backend letsencrypt
+   server letsencrypt 127.0.0.1:9785
