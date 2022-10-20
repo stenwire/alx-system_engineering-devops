@@ -30,10 +30,7 @@ def main():
     done_task = req_3.json()
 
     # Get total no of todo
-    count = 0
-    for todo in u_todo:
-        count += 1
-    todo_len = count
+    todo_len = len(u_todo)
 
     # Get total no of done todo
     done_todo = len(done_task)
