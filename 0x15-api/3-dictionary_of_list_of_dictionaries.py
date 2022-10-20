@@ -3,8 +3,8 @@
 for a given employee ID,returns information about
 his/her todo list progress
 """
-import requests
 import json
+import requests
 
 
 def main():
