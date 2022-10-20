@@ -3,12 +3,11 @@
 for a given employee ID,returns information about
 his/her todo list progress
 """
-import csv
 import requests
 from sys import argv
 
 
-def main():
+if __name__ == '__main__':
     """Query https://jsonplaceholder.typicode.com for info"""
     # Get user ID from STDIN
     args = argv
@@ -32,15 +31,13 @@ def main():
     todo_len = len(u_todo)
 
     # Save content to csv file
-    with open(f'{USER_ID}.csv', 'w', newline='') as f:
-        res = csv.writer(f, quoting=csv.QUOTE_ALL)
+    with open(f'{USER_ID}.csv', 'w') as f:
         for todo in range(todo_len):
             TASK_TITLE = u_todo[todo]['title']
             TASK_COMPLETED_STATUS = u_todo[todo]['completed']
             TASK_TITLE = u_todo[todo]['title']
-            line = [f'{USER_ID},{USERNAME},{TASK_COMPLETED_STATUS},{TASK_TITLE}']
-            res.writerow(line)
-
-
-if __name__ == '__main__':
-    main()
+            str_1 = f'"{USER_ID}","{USERNAME}",'
+            str_2 = f'"{TASK_COMPLETED_STATUS}","{TASK_TITLE}"'
+            line = str_1 + str_2
+            f.write(line)
+            f.write('\n')

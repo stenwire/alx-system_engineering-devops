@@ -7,7 +7,7 @@ import requests
 from sys import argv
 
 
-def main():
+if __name__ == '__main__':
     """Query https://jsonplaceholder.typicode.com for info"""
     # Get user ID from STDIN
     args = argv
@@ -43,7 +43,3 @@ def main():
 
     for todo in range(len(done_task)):
         print('\t {0}'.format(done_task[todo]['title']))
-
-
-if __name__ == '__main__':
-    main()
