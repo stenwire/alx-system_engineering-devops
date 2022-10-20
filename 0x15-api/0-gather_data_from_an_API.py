@@ -42,7 +42,7 @@ def main():
         .format(u_info['name'], done_todo, todo_len))
 
     for todo in range(len(done_task)):
-        print('\t{0}'.format(done_task[todo]['title']))
+        print('\t {0}'.format(done_task[todo]['title']))
 
 
 if __name__ == '__main__':
